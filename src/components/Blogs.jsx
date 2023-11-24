@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { AppContext } from '../context/AppContext'
 import Spinner from './Spinner';
 import "./Blogs.css"
+import BlogDetails from './BlogDetails';
 
 const Blogs = () => {
     // consume the context
@@ -9,7 +10,7 @@ const Blogs = () => {
     //console.log("Printing iside blog component");
     // console.log(posts);
   return (
-    <div>
+    <div className='w-11/12 max-w-[640px] py-3 flex flex-col gap-y-8 mt-[69px] mb-[50px]'>
        {
         loading ? 
 
@@ -18,19 +19,7 @@ const Blogs = () => {
             posts.length === 0 ? (<div>
                 No Post found</div>)
                 :  (posts.map ( (post) => (
-                    <div key={post.id}>
-                        <p className='title font-bold'>{post.title}</p>
-                        <p>
-                            By <span>{post.author}</span> on <span>{post.category}</span>
-                        </p>
-                        <p>Posted on {post.date}</p>
-                        <p>{post.content}</p>
-                        <div>
-                            {post.tags.map((tag, index) => {
-                                return <span key={index}>{` #${tag} `}</span>
-                            })}
-                        </div>
-                    </div>
+                   <BlogDetails key={post.id} post = {post}/>
                 )))
         ) 
        }

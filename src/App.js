@@ -42,7 +42,7 @@ export default function App() {
   
   return (
     <Routes>
-      <Route path="/" element={<Home/>}/>
+      <Route index element={<Home/>}/>
       <Route path="/blog/:blogId" element={<BlogPage/>}/>
       <Route path="/tags/:tag" element={<TagPage/>}/>
       <Route path="/categories/:category" element={<CategoryPage/>}/>

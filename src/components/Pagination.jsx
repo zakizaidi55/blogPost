@@ -19,7 +19,7 @@ const Pagination = () => {
         {
           page < totalPages &&
           ( <button
-          className='rounded-md py-1 px-3 border-2 '
+          className='rounded-md py-1 px-3 border-2 flex flex-col'
           onClick={() => handlePageChange(page+1)}>
             Next
           </button>)
@@ -29,8 +29,8 @@ const Pagination = () => {
      </div>
       
 
-      <p className='font-bold text-sm'>
-        Page = {page} of {totalPages}
+      <p className='font-bold text-sm flex flex-col justify-center items-center'>
+        Page {page} of {totalPages}
       </p>
      </div>
     </div>
