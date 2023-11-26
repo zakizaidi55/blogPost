@@ -6,7 +6,9 @@ import BlogDetails from '../components/BlogDetails';
 import { baseUrl } from '../baseUrl';
 
 const BlogPage = () => {
+
   const newBaseUrl = "https://code-help-apis.vercel.app/api"
+
   const [blog, setBlog] = useState("");
   const [relatedBlog, setRelatedBlog] = useState([]);
   const location = useLocation();
